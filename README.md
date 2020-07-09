@@ -1,4 +1,4 @@
-# House Pricing Project
+# House Pricing Project (work in progress...)
 
 The data (found on Kaggle) has 81 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa. 
 
