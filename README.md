@@ -1,4 +1,4 @@
-# House Pricing Project (work in progress...)
+# House Prices Project (work in progress...)
 
 ## Data
 
@@ -12,7 +12,7 @@ Data can be found in the 'data' folder.
 
 The final goal is to predict the sale price for each house in the test dataset using a model trained using the train dataset.
 
-### Quick tracking of what can be found in the notebook
+### Quick tracking of what can be found in the EDA notebook
 
  - Sale prices distribution
 
@@ -28,6 +28,14 @@ The final goal is to predict the sale price for each house in the test dataset u
 
  - Correlation Matrix 
 
-Scatter plots of the most correlated variables with sale prices
+ - Scatter plots of the most correlated variables with sale prices
+ 
+ - Deleting missing data
+ 
+ - Trating outliers
+ 
+ - Testing normality
+ 
+ - Testing homoscedasticity
 
 
