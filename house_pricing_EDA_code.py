@@ -56,6 +56,8 @@ def sale_distr(df_train):
 
     ax.text(50e4, 5e-6, m + '\n' + '\n' + std + '\n' + '\n' + s + '\n' + '\n' + k, fontsize = 18)
 
+    fig.savefig('plots/sale_distr.png', dpi = 300)
+
     plt.show()
 
 def lin(x, a, b):
@@ -101,6 +103,8 @@ def scatter_gr_liv_area(df_train):
     ax.set_xlim(left = 0, right = 550)
     ax.set_ylim(bottom = 0, top = 7.5e5)
 
+    fig.savefig('plots/scatter_gr_liv_area.png', dpi = 300)
+
     plt.show()
 
 def scatter_basement_surface(df_train):
@@ -143,6 +147,8 @@ def scatter_basement_surface(df_train):
     ax.set_xlim(left = -10, right = 600)
     ax.set_ylim(bottom = 0, top = 7.5e5)
 
+    fig.savefig('plots/scatter_basement_surface.png', dpi = 300)
+
     plt.show()
 
 def strip_overall_qual(df_train):
@@ -175,6 +181,8 @@ def strip_overall_qual(df_train):
     ax.set_xlim(left = -0.5, right = 9.5)
     ax.set_ylim(bottom = 0, top = 7.5e5)
 
+    fig.savefig('plots/strip_overall_qual.png', dpi = 300)
+
     plt.show()
 
 def strip_year_building(df_train):
@@ -206,8 +214,10 @@ def strip_year_building(df_train):
     ax.yaxis.get_offset_text().set_fontsize(15)
     ax.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
     ax.ticklabel_format(axis = 'y', style = 'sci', scilimits = (3,3))
-    ax.set(xticks=np.arange(-2, 118, 5), xticklabels=np.arange(1890, 2010, 5))
-    plt.setp(ax.xaxis.get_majorticklabels(), rotation=90 )
+    ax.set(xticks=np.arange(-2, 118, 5), xticklabels = np.arange(1890, 2010, 5))
+    plt.setp(ax.xaxis.get_majorticklabels(), rotation = 90)
+
+    fig.savefig('plots/strip_year_building.png', dpi = 300)
 
     plt.show()
 
@@ -221,6 +231,8 @@ def corr_matrix(df_train):
 
     #heatmap
     sns.heatmap(corr_mat, square = True, ax = ax, cmap = 'viridis')
+
+    fig.savefig('plots/corr_matrix.png', dpi = 300)
 
     plt.show()
 
@@ -237,6 +249,8 @@ def zoomed_corr_matrix(df_train):
     cm = np.corrcoef(df_train[cols].values.T)
     sns.set(font_scale = 1.25)
     hm = sns.heatmap(cm, cbar = True, annot = True, square = True, fmt = '.2f', annot_kws = {'size': 15}, yticklabels = cols.values, xticklabels = cols.values, ax = ax, cmap = 'viridis')
+
+    fig.savefig('plots/zoomed_corr_matrix.png', dpi = 300)
 
     plt.show()
 
@@ -333,6 +347,9 @@ def correlated_scatters(df_train):
     ax8.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
     ax8.ticklabel_format(axis = 'y', style = 'sci', scilimits = (3,3))
 
+    fig.savefig('plots/correlated_scatters.png', dpi = 300)
+
+
     jtplot.reset()
     plt.show()
 
@@ -401,6 +418,8 @@ def sales_gr_liv_area_outliers(df_train):
     ax.set_xlim(left = 0, right = 550)
     ax.set_ylim(bottom = 0, top = 7.5e5)
 
+    fig.savefig('plots/sales_gr_liv_area_outliers.png', dpi = 300)
+
     plt.show()
 
 def normal_sales(df_train):
@@ -454,6 +473,8 @@ def normal_sales(df_train):
     ax2.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
     ax2.ticklabel_format(axis = 'y', style = 'sci', scilimits = (3,3))
 
+    fig.savefig('plots/normal_sales.png', dpi = 300)
+
     plt.show()
 
 def normal_sales_log(sale_euro_log):
@@ -501,6 +522,8 @@ def normal_sales_log(sale_euro_log):
     ax2.tick_params(axis = 'both', which = 'major', labelsize = 12)
     ax2.yaxis.get_offset_text().set_fontsize(12)
     ax2.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+
+    fig.savefig('plots/normal_sales_log.png', dpi = 300)
 
     plt.show()
 
@@ -554,6 +577,8 @@ def normal_gr_liv_area(df_train):
     ax2.yaxis.get_offset_text().set_fontsize(12)
     ax2.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
 
+    fig.savefig('plots/normal_gr_liv_area.png', dpi = 300)
+
     plt.show()
 
 def normal_gr_liv_area_log(gr_liv_area_log):
@@ -601,6 +626,8 @@ def normal_gr_liv_area_log(gr_liv_area_log):
     ax2.tick_params(axis = 'both', which = 'major', labelsize = 12)
     ax2.yaxis.get_offset_text().set_fontsize(12)
     ax2.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+
+    fig.savefig('plots/normal_gr_liv_area_log.png', dpi = 300)
 
     plt.show()
 
@@ -654,6 +681,7 @@ def normal_basement_surface(df_train):
     ax2.yaxis.get_offset_text().set_fontsize(12)
     ax2.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
 
+    fig.savefig('plots/normal_basement_surface.png', dpi = 300)
 
     plt.show()
 
@@ -703,6 +731,8 @@ def normal_basement_surface_log(basement_surface_log):
     ax2.yaxis.get_offset_text().set_fontsize(12)
     ax2.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
 
+    fig.savefig('plots/normal_basement_surface_log.png', dpi = 300)
+
     plt.show()
 
 def scatter_homoscedasticity_1(sale_euro, gr_liv_area, sale_euro_log, gr_liv_area_log):
@@ -749,6 +779,8 @@ def scatter_homoscedasticity_1(sale_euro, gr_liv_area, sale_euro_log, gr_liv_are
     ax2.yaxis.get_offset_text().set_fontsize(12)
     ax2.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
 
+    fig.savefig('plots/scatter_homoscedasticity_1.png', dpi = 300)
+
     plt.show()
 
 def scatter_homoscedasticity_1_kde(sale_euro, gr_liv_area, sale_euro_log, gr_liv_area_log):
@@ -785,6 +817,8 @@ def scatter_homoscedasticity_1_kde(sale_euro, gr_liv_area, sale_euro_log, gr_liv
     ax4.tick_params(axis = 'both', which = 'major', labelsize = 12)
     ax4.yaxis.get_offset_text().set_fontsize(12)
     ax4.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+
+    fig.savefig('plots/scatter_homoscedasticity_1_kde.png', dpi = 300)
 
     plt.show()
 
@@ -836,6 +870,8 @@ def scatter_homoscedasticity_2(sale_euro, basement_surface_with_basement, sale_e
     #ax2.set_xlim(left = 0, right = 550)
     #ax2.set_ylim(bottom = 0, top = 7.5e5)
 
+    fig.savefig('plots/scatter_homoscedasticity_2.png', dpi = 300)
+
     plt.show()
 
 def scatter_homoscedasticity_2_kde(sale_euro_basement, basement_surface_with_basement, sale_euro_log_basement, basement_surface_log_with_basement):
@@ -872,5 +908,7 @@ def scatter_homoscedasticity_2_kde(sale_euro_basement, basement_surface_with_bas
     ax4.tick_params(axis = 'both', which = 'major', labelsize = 12)
     ax4.yaxis.get_offset_text().set_fontsize(12)
     ax4.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+
+    fig.savefig('plots/scatter_homoscedasticity_2_kde.png', dpi = 300)
 
     plt.show()
