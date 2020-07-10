@@ -47,7 +47,7 @@ As every data analysis work begin, data has been read from the 'train' csv file.
  
 Next, we've looked at the 'SalePrice' distribution, finding out that the distribution is positively skewed, has a quite sharp peak and deviate appreciably from the normal distribution. Also, the peak is located between 100'000 and 200'000 euros: most houses seems to be in this range of sale.
 
-![alt text](plots/sale_distr.png)
+![sale_distr](plots/sale_distr.png)
 
 Then, among all the features available, we've selected a few that we thought are the most correlated with 'SalePrice': those are
  - Living Area
@@ -60,6 +60,8 @@ Our first guess was quite right: all of these variables appear to be positively 
 After that, we went more deep into in the correlation topic by approaching a correlation matrix: the most correlated features seems to be 'twin', as they actually deliver the same information. 
 
 Exploring the most correlated variables with 'SalePrice', we've found that all the features previously analysed find a spot in the top 10! 
+
+![zoomed_corr_matrix](plots/zoomed_corr_matrix.png)
 
 The most correlated variables with 'SalePrice' are:
 
@@ -87,7 +89,13 @@ Leaving behind the correlations, we focused on the missing data: there are some 
 
 After that, we treated outliers and tested normality: since most of the distributions are positively skewed, a log trasformation worked perfectly to achieve satisfactory normality of the data.
 
+![normal_sales](plots/normal_sales.png)
+![normal_sales_log](plots/normal_sales_log.png)
+
 Finally homoscedasticity has been also tested: it came out that log transformation worked quite well also for homoscedasticity! It has to be said though that results were not that remarkable as they were for normality.
+
+![scatter_homoscedasticity_1](plots/scatter_homoscedasticity_1.png)
+![scatter_homoscedasticity_1_kde](plots/scatter_homoscedasticity_1_kde.png)
 
 
 ## EDA Code
