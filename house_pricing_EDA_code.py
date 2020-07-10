@@ -710,6 +710,7 @@ def scatter_homoscedasticity_1(sale_euro, gr_liv_area, sale_euro_log, gr_liv_are
     fig = plt.figure(figsize=(18,8))
     ax1 = plt.subplot2grid((1, 20), (0, 0), rowspan=1, colspan=9)
     ax2 = plt.subplot2grid((1, 20), (0, 11), rowspan=1, colspan=9)
+    
     ax1.grid(axis='both', linewidth = .3)
     ax2.grid(axis='both', linewidth = .3)
 
@@ -725,7 +726,7 @@ def scatter_homoscedasticity_1(sale_euro, gr_liv_area, sale_euro_log, gr_liv_are
 
     #axis ticks
     ax1.tick_params(axis = 'both', which = 'major', labelsize = 12)
-    ax1.yaxis.get_offset_text().set_fontsize(15)
+    ax1.yaxis.get_offset_text().set_fontsize(12)
     ax1.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
     ax1.ticklabel_format(axis = 'y', style = 'sci', scilimits = (3,3))
 
@@ -745,13 +746,45 @@ def scatter_homoscedasticity_1(sale_euro, gr_liv_area, sale_euro_log, gr_liv_are
 
     #axis ticks
     ax2.tick_params(axis = 'both', which = 'major', labelsize = 12)
-    ax2.yaxis.get_offset_text().set_fontsize(15)
+    ax2.yaxis.get_offset_text().set_fontsize(12)
     ax2.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
-    #ax2.ticklabel_format(axis = 'y', style = 'sci', scilimits = (3,3))
 
-    #axis limits
-    #ax2.set_xlim(left = 0, right = 550)
-    #ax2.set_ylim(bottom = 0, top = 7.5e5)
+    plt.show()
+
+def scatter_homoscedasticity_1_kde(sale_euro, gr_liv_area, sale_euro_log, gr_liv_area_log):
+    #figure setup
+    fig = plt.figure(figsize=(18,8))
+    ax3 = plt.subplot2grid((1, 20), (0, 0), rowspan=1, colspan=9)
+    ax4 = plt.subplot2grid((1, 20), (0, 11), rowspan=1, colspan=9)
+
+    sns.kdeplot(gr_liv_area, sale_euro, cmap = 'rainbow', ax = ax3, shade = True, shade_lowest = False, cbar = True, gridsize=200)
+
+    #axis labels
+    ax3.set_xlabel(r'Above Ground Living Area [m$^2$]', fontsize = 15)
+    ax3.set_ylabel('Sale Price [€]', fontsize = 15)
+
+    #title
+    #ax3.set_title('Sale Prices vs Living Area', fontsize = 18)
+
+    #axis ticks
+    ax3.tick_params(axis = 'both', which = 'major', labelsize = 12)
+    ax3.yaxis.get_offset_text().set_fontsize(12)
+    ax3.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+    ax3.ticklabel_format(axis = 'y', style = 'sci', scilimits = (3,3))
+
+    sns.kdeplot(gr_liv_area_log, sale_euro_log, cmap = 'rainbow', ax = ax4, shade = True, shade_lowest = False, cbar = True, gridsize=200)
+
+    #axis labels
+    ax4.set_xlabel(r'Above Ground Living Area [m$^2$] (log)', fontsize = 15)
+    ax4.set_ylabel('Sale Price [€] (log)', fontsize = 15)
+
+    #title
+    #ax4.set_title('Sale Prices vs Living Area', fontsize = 18)
+
+    #axis ticks
+    ax4.tick_params(axis = 'both', which = 'major', labelsize = 12)
+    ax4.yaxis.get_offset_text().set_fontsize(12)
+    ax4.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
 
     plt.show()
 
@@ -802,5 +835,42 @@ def scatter_homoscedasticity_2(sale_euro, basement_surface_with_basement, sale_e
     #axis limits
     #ax2.set_xlim(left = 0, right = 550)
     #ax2.set_ylim(bottom = 0, top = 7.5e5)
+
+    plt.show()
+
+def scatter_homoscedasticity_2_kde(sale_euro_basement, basement_surface_with_basement, sale_euro_log_basement, basement_surface_log_with_basement):
+    #figure setup
+    fig = plt.figure(figsize=(18,8))
+    ax3 = plt.subplot2grid((1, 20), (0, 0), rowspan=1, colspan=9)
+    ax4 = plt.subplot2grid((1, 20), (0, 11), rowspan=1, colspan=9)
+
+    sns.kdeplot(basement_surface_with_basement, sale_euro_basement, cmap = 'rainbow', ax = ax3, shade = True, shade_lowest = False, cbar = True, gridsize=200)
+
+    #axis labels
+    ax3.set_xlabel(r'Basement Surface [m$^2$]', fontsize = 15)
+    ax3.set_ylabel('Sale Price [€]', fontsize = 15)
+
+    #title
+    #ax3.set_title('Sale Prices vs Living Area', fontsize = 18)
+
+    #axis ticks
+    ax3.tick_params(axis = 'both', which = 'major', labelsize = 12)
+    ax3.yaxis.get_offset_text().set_fontsize(12)
+    ax3.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+    ax3.ticklabel_format(axis = 'y', style = 'sci', scilimits = (3,3))
+
+    sns.kdeplot(basement_surface_log_with_basement, sale_euro_log_basement, cmap = 'rainbow', ax = ax4, shade = True, shade_lowest = False, cbar = True, gridsize=200)
+
+    #axis labels
+    ax4.set_xlabel(r'Basement Surface [m$^2$] (log)', fontsize = 15)
+    ax4.set_ylabel('Sale Price [€] (log)', fontsize = 15)
+
+    #title
+    #ax4.set_title('Sale Prices vs Living Area', fontsize = 18)
+
+    #axis ticks
+    ax4.tick_params(axis = 'both', which = 'major', labelsize = 12)
+    ax4.yaxis.get_offset_text().set_fontsize(12)
+    ax4.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
 
     plt.show()
