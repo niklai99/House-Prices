@@ -6,7 +6,7 @@ The data (found on Kaggle: https://www.kaggle.com/c/house-prices-advanced-regres
 
 It is divided into two different datasets: 'train' and 'test'. The first one contain the feature 'SalePrice', while the second one does not.
 
-Data can be found in the 'data' folder.
+Data can be found in the 'data' folder, along with a txt file explaining the meaning of each feature.
 
 ## Goal
 
