@@ -47,6 +47,8 @@ As every data analysis work begin, data has been read from the 'train' csv file.
  
 Next, we've looked at the 'SalePrice' distribution, finding out that the distribution is positively skewed, has a quite sharp peak and deviate appreciably from the normal distribution. Also, the peak is located between 100'000 and 200'000 euros: most houses seems to be in this range of sale.
 
+![alt text](plots/sale_distr.png)
+
 Then, among all the features available, we've selected a few that we thought are the most correlated with 'SalePrice': those are
  - Living Area
  - Basement Area
