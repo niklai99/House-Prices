@@ -12,6 +12,12 @@ Data can be found in the 'data' folder.
 
 The final goal is to predict the sale price for each house in the test dataset using a model trained using the train dataset.
 
+## EDA Notebook
+[house_pricing_EDA_notebook](https://github.com/niklai99/House-Pricing/blob/master/house_pricing_EDA_notebook.ipynb)
+
+## EDA Code
+[house_pricing_EDA_code](https://github.com/niklai99/House-Pricing/blob/master/house_pricing_EDA_code.py)
+
 ### Quick tracking of what can be found in the EDA notebook
 
  - Sale prices distribution
