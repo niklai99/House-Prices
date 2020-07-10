@@ -11,7 +11,7 @@ from jupyterthemes import jtplot
 jtplot.reset()
 
 def get_data():
-    file = 'train.csv'
+    file = 'data/train.csv'
     df_train = pd.read_csv(file)
     return df_train
 
