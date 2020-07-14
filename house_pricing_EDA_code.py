@@ -912,3 +912,39 @@ def scatter_homoscedasticity_2_kde(sale_euro_basement, basement_surface_with_bas
     fig.savefig('plots/scatter_homoscedasticity_2_kde.png', dpi = 300)
 
     plt.show()
+
+def strip_neighborhood(df_train):
+    #figure setup
+    fig = plt.figure(figsize=(12,8))
+    ax = fig.add_subplot(1, 1, 1)
+    ax.grid(axis='y', linewidth = .3)
+
+    #conversion dollar to euro
+    conv_dollar_to_euro = 0.88
+    sale_euro = df_train['SalePrice'] * conv_dollar_to_euro
+
+    #strip plot
+    sns.stripplot(x = df_train['Neighborhood'], y = sale_euro, ax = ax)
+
+    #axis labels
+    ax.set_xlabel('Neighborhood', fontsize = 18)
+    ax.set_ylabel('Sale Price [€]', fontsize = 18)
+
+    #title
+    ax.set_title('Sale Prices by Neighborhood', fontsize = 22)
+
+    #axis limits
+    #ax.set_xlim(left = -2, right = 112)
+    ax.set_ylim(bottom = 0, top = 7.5e5)
+
+    #axis ticks
+    ax.tick_params(axis = 'both', which = 'major', labelsize = 15)
+    ax.yaxis.get_offset_text().set_fontsize(15)
+    ax.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+    ax.ticklabel_format(axis = 'y', style = 'sci', scilimits = (3,3))
+    #ax.set(xticks=np.arange(-2, 118, 5), xticklabels = np.arange(1890, 2010, 5))
+    plt.setp(ax.xaxis.get_majorticklabels(), rotation = 90)
+
+    #fig.savefig('plots/strip_year_building.png', dpi = 300)
+
+    plt.show()
