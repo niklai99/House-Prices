@@ -1,4 +1,4 @@
-# House Prices Project (work in progress...)
+# House Prices EDA
 
 ## Data
 
