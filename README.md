@@ -15,6 +15,8 @@ The final goal is to predict the sale price for each house in the test dataset u
 ## EDA Notebook
 [house_pricing_EDA_notebook](https://github.com/niklai99/House-Pricing/blob/master/house_pricing_EDA_notebook.ipynb)
 
+Special thanks to [Pedro Marcelino](https://www.kaggle.com/pmarcelino) for his inspiring notebook published on Kaggle.
+
 ### Quick tracking of what can be found in the EDA notebook
 
  - Sale prices distribution
